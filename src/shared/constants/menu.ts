@@ -1,4 +1,4 @@
-import { ROUTE } from "../../shared/constants/routes";
+import { ROUTE } from "./routes";
 
 export const MENU = {
   board: {
