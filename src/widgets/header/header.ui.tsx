@@ -1,5 +1,5 @@
 import * as x from "@stylexjs/stylex";
-import { color, size } from "../../shared/styles/tokens.stylex";
+import { color, size } from "../../shared/styles";
 
 const styles = x.create({
   header: {

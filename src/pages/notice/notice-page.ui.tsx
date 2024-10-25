@@ -1,4 +1,4 @@
-import { NoticeTable } from "../../widgets/notice-table";
+import { NoticeTable } from "../../widgets";
 
 export const NoticePage = () => {
   return <NoticeTable />;

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
-import { MENU } from "../../shared/constants/menu";
-import { useToggleList } from "../../shared/hooks/use-toggle-list";
-
+import { MENU } from "../../shared/constants";
+import { useToggleList } from "../../shared/hooks";
+import { color, size } from "../../shared/styles";
 import * as x from "@stylexjs/stylex";
-import { color, size } from "../../shared/styles/tokens.stylex";
 
 const styles = x.create({
   sidebar: {

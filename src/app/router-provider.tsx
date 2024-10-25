@@ -3,8 +3,8 @@ import {
   RouterProvider as BaseRouterProvider,
 } from "react-router-dom";
 import { Layout } from "./layout";
-import { ROUTE } from "../shared/constants/routes";
-import { NoticePage } from "../pages/notice";
+import { ROUTE } from "../shared/constants";
+import { NoticePage } from "../pages";
 
 const router = createBrowserRouter([
   {

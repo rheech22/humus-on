@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
+import { NoticeKeywordFilter } from "./notice-table.consts";
 import { fetchNoticeList } from "./notice-table.apis";
 import { Notice } from "../../entities/notice";
-import { Table } from "../../shared/ui/table";
-import { Pagination } from "../../shared/ui/pagination";
-
+import { Pagination, Table } from "../../shared/ui";
+import { color } from "../../shared/styles";
 import * as x from "@stylexjs/stylex";
-import { color } from "../../shared/styles/tokens.stylex";
-import { NoticeKeywordFilter } from "./notice-table.consts";
 
 const styles = x.create({
   upperTable: {

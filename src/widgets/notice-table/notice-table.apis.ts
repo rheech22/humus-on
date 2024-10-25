@@ -1,4 +1,4 @@
-import { Notice } from "../../entities/notice";
+import { Notice } from "../../entities";
 import { NoticeKeywordFilter } from "./notice-table.consts";
 
 const mockNotices: Notice[] = Array.from({ length: 32 }, (_, index) => {
