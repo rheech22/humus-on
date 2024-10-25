@@ -1,0 +1,18 @@
+@stylex stylesheet;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+#root {
+  button {
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  li {
+    list-style: none;
+  }
+}

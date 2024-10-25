@@ -2,10 +2,18 @@ import { Link } from "react-router-dom";
 import { MENU } from "./sidebar.const";
 import { useToggleList } from "../../shared/hooks/use-toggle-list";
 
+import * as x from "@stylexjs/stylex";
+
+const styles = x.create({
+  root: {
+    backgroundColor: "red",
+  },
+});
+
 export const Sidebar = () => {
   const { isToggled, toggle } = useToggleList(false);
   return (
-    <div>
+    <div {...x.props(styles.root)}>
       {Object.entries(MENU).map(([key, { title, routes }]) => {
         return (
           <div key={key}>
