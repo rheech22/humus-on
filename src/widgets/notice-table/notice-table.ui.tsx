@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchNoticeList } from "./notice.table.apis";
+import { fetchNoticeList } from "./notice-table.apis";
 import { Notice } from "../../entities/notice";
 import { Table } from "../../shared/ui/table";
 import { Pagination } from "../../shared/ui/pagination";
@@ -68,8 +68,9 @@ const PER_PAGE = 5;
 export const NoticeTable = () => {
   const [noticeList, setNoticeList] = useState<Notice[]>();
   const [loading, setLoading] = useState(true);
-  const [searchKeyword, setSearchKeyword] = useState("");
-  const [filterType, setFilterType] = useState(NoticeKeywordFilter.ID);
+  const [keyword, setKeyword] = useState("");
+  const [filter, setFilter] = useState(NoticeKeywordFilter.ID);
+  const [dateFilter, setDateFilter] = useState<string | null>(null);
   const [page, setPage] = useState(1);
   useEffect(() => {
     (async () => {
@@ -88,34 +89,50 @@ export const NoticeTable = () => {
       <div {...x.props(styles.controls)}>
         <div {...x.props(styles.datePicker)}>
           등록일 기준
-          <input type="date" />
+          <input
+            type="date"
+            onChange={async ({ target }) => {
+              const response = await fetchNoticeList({
+                filter,
+                keyword,
+                dateFilter: target.value,
+              });
+
+              console.log(response);
+              setNoticeList(response.data);
+              setDateFilter(target.value);
+            }}
+          />
         </div>
         <div {...x.props(styles.keywordFilters)}>
           검색 조건
           <select
-            value={filterType}
+            value={filter}
             onChange={({ target }) => {
-              setFilterType(target.value as NoticeKeywordFilter);
-              setSearchKeyword("");
+              setFilter(target.value as NoticeKeywordFilter);
+              setKeyword("");
             }}
           >
             {Object.values(NoticeKeywordFilter).map((type) => (
-              <option value={type}>{type}</option>
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
           </select>
           <input
             type="text"
-            value={searchKeyword}
-            onChange={({ target }) => setSearchKeyword(target.value)}
+            value={keyword}
+            onChange={({ target }) => setKeyword(target.value)}
           />
           <button
             {...x.props(styles.search)}
             onClick={async () => {
-              const response = await fetchNoticeList({
-                filter: filterType,
-                keyword: searchKeyword,
+              const { data } = await fetchNoticeList({
+                filter,
+                keyword,
+                dateFilter,
               });
-              setNoticeList(response.data);
+              setNoticeList(data);
             }}
           >
             검색
