@@ -7,5 +7,6 @@ export const size = x.defineVars({
 export const color = x.defineVars({
   white: "#fff",
   gray: "#ccc",
+  darkGray: "#333",
   green: "#008851",
 });

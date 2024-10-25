@@ -1,1 +1,1 @@
-export { NoticePage } from "./notice.ui";
+export { NoticePage } from "./notice-page.ui";
