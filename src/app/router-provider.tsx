@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import { Layout } from "./layout";
 import { ROUTE } from "../shared/constants/routes";
+import { NoticePage } from "../pages/notice";
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: ROUTE.notice,
-        element: <div>notice</div>,
+        element: <NoticePage />,
       },
       {
         path: ROUTE.qna,
