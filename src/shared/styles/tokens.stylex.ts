@@ -8,5 +8,6 @@ export const color = x.defineVars({
   white: "#fff",
   gray: "#ccc",
   darkGray: "#333",
+  lightGray: "#f5f5f5",
   green: "#008851",
 });
