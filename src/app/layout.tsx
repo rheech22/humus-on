@@ -37,7 +37,10 @@ export const Layout = () => {
     <>
       <Header onClick={() => toggle("sidebar")} />
       <div {...x.props(styles.outer)}>
-        <Sidebar expanded={isToggled("sidebar")} />
+        <Sidebar
+          expanded={isToggled("sidebar")}
+          currentPageTitle={breadcrumbs[breadcrumbs.length - 1]}
+        />
         <div {...x.props(styles.inner)}>
           <PageTitle breadcrumbs={breadcrumbs} />
           <div {...x.props(styles.page)}>

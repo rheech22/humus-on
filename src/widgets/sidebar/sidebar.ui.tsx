@@ -39,9 +39,18 @@ const styles = x.create({
   folded: {
     width: "0",
   },
+  isSelected: {
+    color: "red",
+  },
 });
 
-export const Sidebar = ({ expanded }: { expanded: boolean }) => {
+export const Sidebar = ({
+  expanded,
+  currentPageTitle,
+}: {
+  expanded: boolean;
+  currentPageTitle: string;
+}) => {
   const { isToggled, toggle } = useToggleList(false);
   return (
     <aside {...x.props(styles.sidebar, !expanded && styles.folded)}>
@@ -57,7 +66,14 @@ export const Sidebar = ({ expanded }: { expanded: boolean }) => {
                 {routes.map(({ title, path }) => {
                   return (
                     <li key={title}>
-                      <Link to={path}>{title}</Link>
+                      <Link
+                        to={path}
+                        {...x.props(
+                          title === currentPageTitle && styles.isSelected
+                        )}
+                      >
+                        {title}
+                      </Link>
                     </li>
                   );
                 })}
