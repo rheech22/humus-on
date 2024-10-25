@@ -8,11 +8,11 @@ import { NoticePage } from "../pages";
 
 const router = createBrowserRouter([
   {
-    path: ROUTE.home,
     element: <Layout />,
     children: [
       {
-        path: ROUTE.notice,
+        index: true,
+        path: ROUTE.home,
         element: <NoticePage />,
       },
       {

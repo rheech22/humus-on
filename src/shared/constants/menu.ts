@@ -6,7 +6,7 @@ export const MENU = {
     routes: [
       {
         title: "공지사항",
-        path: ROUTE.notice,
+        path: ROUTE.home,
       },
       {
         title: "Q&A",

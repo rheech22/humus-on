@@ -9,5 +9,5 @@ const PATH_TO_BREADCRUMBS = Object.values(MENU).reduce<
 }, {});
 export const useBreadcrumbs = () => {
   const { pathname } = useLocation();
-  return { breadcrumbs: PATH_TO_BREADCRUMBS[pathname] };
+  return { breadcrumbs: PATH_TO_BREADCRUMBS[pathname] ?? [] };
 };

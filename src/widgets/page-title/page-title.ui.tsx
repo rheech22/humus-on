@@ -1,4 +1,4 @@
-import { color, size } from "../../shared/styles";
+import { color, size } from "../../shared/styles/tokens.stylex";
 import * as x from "@stylexjs/stylex";
 
 const styles = x.create({

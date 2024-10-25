@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar, Header, PageTitle } from "../widgets";
 import { useToggleList, useBreadcrumbs } from "../shared/hooks";
-import { color, size } from "../shared/styles";
+import { color, size } from "../shared/styles/tokens.stylex";
 import * as x from "@stylexjs/stylex";
 
 const styles = x.create({

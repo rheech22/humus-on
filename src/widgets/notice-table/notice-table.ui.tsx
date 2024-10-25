@@ -3,7 +3,7 @@ import { NoticeKeywordFilter } from "./notice-table.consts";
 import { fetchNoticeList } from "./notice-table.apis";
 import { Notice } from "../../entities/notice";
 import { Pagination, Table } from "../../shared/ui";
-import { color } from "../../shared/styles";
+import { color } from "../../shared/styles/tokens.stylex";
 import * as x from "@stylexjs/stylex";
 
 const styles = x.create({
