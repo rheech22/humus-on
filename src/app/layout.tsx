@@ -1,12 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { Sidebar } from "../widgets/sidebar";
-import { Header } from "../widgets/header";
-import { useToggleList } from "../shared/hooks/use-toggle-list";
-
+import { Sidebar, Header, PageTitle } from "../widgets";
+import { useToggleList, useBreadcrumbs } from "../shared/hooks";
+import { color, size } from "../shared/styles";
 import * as x from "@stylexjs/stylex";
-import { color, size } from "../shared/styles/tokens.stylex";
-import { PageTitle } from "../widgets/page-title";
-import { useBreadcrumbs } from "../shared/hooks/use-breadcrumbs";
 
 const styles = x.create({
   outer: {
