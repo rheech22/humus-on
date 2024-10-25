@@ -1,25 +1,27 @@
 import * as x from "@stylexjs/stylex";
+import { color, size } from "../../shared/styles/tokens.stylex";
 
 const styles = x.create({
   header: {
     display: "flex",
     alignItems: "center",
     padding: "8px",
-    backgroundColor: "#008851",
-    color: "#fff",
+    backgroundColor: color.green,
+    color: color.white,
     gap: "6px",
+    height: size.headerHeight,
   },
   hamburger: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-around",
     marginRight: "4px",
-    color: "#fff",
+    color: color.white,
     gap: "4px",
   },
   burgerSlice: {
     display: "block",
-    backgroundColor: "#fff",
+    backgroundColor: color.white,
     width: "20px",
     height: "3px",
   },
@@ -41,7 +43,7 @@ const styles = x.create({
     width: "24px",
     height: "24px",
     borderRadius: "50%",
-    backgroundColor: "#fff",
+    backgroundColor: color.white,
   },
   username: {
     fontSize: "14px",
@@ -51,14 +53,14 @@ const styles = x.create({
     height: "0",
     borderStyle: "solid",
     borderWidth: "10px 5px 0px 5px",
-    borderColor: "#fff transparent transparent transparent",
+    borderColor: `${color.white} transparent transparent transparent`,
   },
 });
 
-export const Header = () => {
+export const Header = ({ onClick }: { onClick: () => void }) => {
   return (
     <header {...x.props(styles.header)}>
-      <button {...x.props(styles.hamburger)}>
+      <button {...x.props(styles.hamburger)} onClick={onClick}>
         <span {...x.props(styles.burgerSlice)} />
         <span {...x.props(styles.burgerSlice)} />
         <span {...x.props(styles.burgerSlice)} />
