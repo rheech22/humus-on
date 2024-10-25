@@ -3,22 +3,23 @@ import {
   RouterProvider as BaseRouterProvider,
 } from "react-router-dom";
 import { Layout } from "./layout";
+import { ROUTE } from "../shared/constants/routes";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: ROUTE.home,
     element: <Layout />,
     children: [
       {
-        path: "/notice",
+        path: ROUTE.notice,
         element: <div>notice</div>,
       },
       {
-        path: "/qna",
+        path: ROUTE.qna,
         element: <div>qna</div>,
       },
       {
-        path: "/dispatch",
+        path: ROUTE.dispatch,
         element: <div>dispatch</div>,
       },
     ],
