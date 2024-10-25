@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../widgets/sidebar";
+import { Header } from "../widgets/header";
 
 export const Layout = () => {
   return (
     <>
-      <header>헤더</header>
+      <Header />
       <div style={{ display: "flex" }}>
         <Sidebar />
         <Outlet />
