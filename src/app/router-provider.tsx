@@ -16,11 +16,11 @@ const router = createBrowserRouter([
       },
       {
         path: ROUTE.qna,
-        element: <div>qna</div>,
+        element: <div>Q&A</div>,
       },
       {
         path: ROUTE.dispatch,
-        element: <div>dispatch</div>,
+        element: <div>메시지 발송</div>,
       },
     ],
   },

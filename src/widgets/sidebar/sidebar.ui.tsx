@@ -6,18 +6,10 @@ import * as x from "@stylexjs/stylex";
 import { color, size } from "../../shared/styles/tokens.stylex";
 
 const styles = x.create({
-  organization: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "14px",
-    padding: "8px",
-    height: size.pageTitleHeight,
-    borderBottom: `1px solid ${color.green}`,
-  },
   sidebar: {
     borderRight: `1px solid ${color.gray}`,
     width: "180px",
+    overflow: "hidden",
   },
   menu: {
     padding: "8px",
@@ -35,12 +27,24 @@ const styles = x.create({
     padding: "16px",
     fontSize: "14px",
   },
+  organization: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "14px",
+    padding: "8px",
+    height: size.pageTitleHeight,
+    borderBottom: `1px solid ${color.green}`,
+  },
+  folded: {
+    width: "0",
+  },
 });
 
-export const Sidebar = () => {
+export const Sidebar = ({ expanded }: { expanded: boolean }) => {
   const { isToggled, toggle } = useToggleList(false);
   return (
-    <aside {...x.props(styles.sidebar)}>
+    <aside {...x.props(styles.sidebar, !expanded && styles.folded)}>
       <div {...x.props(styles.organization)}>휴먼스온</div>
       {Object.entries(MENU).map(([key, { title, routes }]) => {
         return (
